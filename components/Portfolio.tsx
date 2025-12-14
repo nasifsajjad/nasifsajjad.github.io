@@ -3,17 +3,17 @@ import { motion } from 'framer-motion';
 import { PROJECTS } from '../constants';
 import { ArrowUpRight } from 'lucide-react';
 
-// Placeholder images for the slider until real ones are provided
+// Converted Google Drive links to direct image source format
 const SLIDER_IMAGES = [
-  'https://drive.google.com/file/d/1cUkGVv767B_4QQtRxLmNCN-aiNkohk7M/view?usp=drive_link',
-  'https://drive.google.com/open?id=1DAatwztqJ0VN25cF9uyzg7TD3QOIaebV&usp=drive_copy',
-  'https://drive.google.com/open?id=1-1cR3XwtcGBbrN04cOqKzRX3ACpfhZlL&usp=drive_copy',
-  'https://drive.google.com/open?id=1pvUMa4Q8gLeAZ2-ckPj4Xytiwn0JhY4p&usp=drive_copy',
-  'https://drive.google.com/open?id=1TlmaRbG_rxhUoa6vEn_43shkgdczSW_P&usp=drive_copy',
-  'https://drive.google.com/open?id=10oa6QR7uqIvUckr0qvbJc4V-nk3GsCx6&usp=drive_copy',
-  'https://drive.google.com/open?id=1BaqYQW7QDyagxdX7AbAWZa_mQDJNaB5W&usp=drive_copy',
-  'https://drive.google.com/open?id=1xnLAHy41jZ2aNAQJhkVx0zvn6HYQLPL7&usp=drive_copy',
-  'https://drive.google.com/open?id=1dXnMvIZ80l45hWDjt7hS1AmIxaayCKx4&usp=drive_copy'
+  'https://drive.google.com/uc?export=view&id=1cUkGVv767B_4QQtRxLmNCN-aiNkohk7M',
+  'https://drive.google.com/uc?export=view&id=1DAatwztqJ0VN25cF9uyzg7TD3QOIaebV',
+  'https://drive.google.com/uc?export=view&id=1-1cR3XwtcGBbrN04cOqKzRX3ACpfhZlL',
+  'https://drive.google.com/uc?export=view&id=1pvUMa4Q8gLeAZ2-ckPj4Xytiwn0JhY4p',
+  'https://drive.google.com/uc?export=view&id=1TlmaRbG_rxhUoa6vEn_43shkgdczSW_P',
+  'https://drive.google.com/uc?export=view&id=10oa6QR7uqIvUckr0qvbJc4V-nk3GsCx6',
+  'https://drive.google.com/uc?export=view&id=1BaqYQW7QDyagxdX7AbAWZa_mQDJNaB5W',
+  'https://drive.google.com/uc?export=view&id=1xnLAHy41jZ2aNAQJhkVx0zvn6HYQLPL7',
+  'https://drive.google.com/uc?export=view&id=1dXnMvIZ80l45hWDjt7hS1AmIxaayCKx4'
 ];
 
 export const Portfolio: React.FC = () => {
@@ -111,12 +111,13 @@ export const Portfolio: React.FC = () => {
                 {[...SLIDER_IMAGES, ...SLIDER_IMAGES].map((src, index) => (
                     <div 
                         key={index} 
-                        className="relative flex-shrink-0 w-[300px] h-[200px] md:w-[400px] md:h-[300px] rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500 border border-white/10"
+                        className="relative flex-shrink-0 w-[300px] h-[200px] md:w-[400px] md:h-[300px] rounded-xl overflow-hidden bg-white/5 border border-white/10"
                     >
                         <img 
                             src={src} 
                             alt={`Graphic Design Sample ${index}`} 
-                            className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110"
+                            loading="lazy"
                         />
                     </div>
                 ))}
