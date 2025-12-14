@@ -5,15 +5,15 @@ import { ArrowUpRight } from 'lucide-react';
 
 // Placeholder images for the slider until real ones are provided
 const SLIDER_IMAGES = [
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9'
+  'https://drive.google.com/file/d/1cUkGVv767B_4QQtRxLmNCN-aiNkohk7M/view?usp=drive_link',
+  'https://drive.google.com/open?id=1DAatwztqJ0VN25cF9uyzg7TD3QOIaebV&usp=drive_copy',
+  'https://drive.google.com/open?id=1-1cR3XwtcGBbrN04cOqKzRX3ACpfhZlL&usp=drive_copy',
+  'https://drive.google.com/open?id=1pvUMa4Q8gLeAZ2-ckPj4Xytiwn0JhY4p&usp=drive_copy',
+  'https://drive.google.com/open?id=1TlmaRbG_rxhUoa6vEn_43shkgdczSW_P&usp=drive_copy',
+  'https://drive.google.com/open?id=10oa6QR7uqIvUckr0qvbJc4V-nk3GsCx6&usp=drive_copy',
+  'https://drive.google.com/open?id=1BaqYQW7QDyagxdX7AbAWZa_mQDJNaB5W&usp=drive_copy',
+  'https://drive.google.com/open?id=1xnLAHy41jZ2aNAQJhkVx0zvn6HYQLPL7&usp=drive_copy',
+  'https://drive.google.com/open?id=1dXnMvIZ80l45hWDjt7hS1AmIxaayCKx4&usp=drive_copy'
 ];
 
 export const Portfolio: React.FC = () => {
