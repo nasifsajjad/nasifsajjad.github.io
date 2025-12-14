@@ -34,8 +34,9 @@ export const CustomCursor: React.FC = () => {
     };
   }, []);
 
+  // Changed hidden md:block to hidden lg:block to hide on tablets as well
   return (
-    <div className="hidden md:block fixed top-0 left-0 w-full h-full pointer-events-none z-[10000]">
+    <div className="hidden lg:block fixed top-0 left-0 w-full h-full pointer-events-none z-[10000]">
       <motion.div
         className="fixed top-0 left-0 bg-white mix-blend-difference rounded-full"
         animate={{
