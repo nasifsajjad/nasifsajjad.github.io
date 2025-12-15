@@ -1,0 +1,56 @@
+name: Deploy Static Site to Pages
+
+on:
+  push:
+    branches: ["main"] # Deploys every time you push to the 'main' branch
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  cancel-in-progress: true
+  group: "pages"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use a recent stable Node.js version
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        # This command runs your build script (defined in package.json)
+        run: npm run build 
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        # The 'dist' folder is the default output folder for Vite. 
+        # If your build tool uses a different folder, change 'dist'.
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' 
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
